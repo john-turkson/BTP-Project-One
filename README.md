@@ -1,8 +1,8 @@
 # BTP-Project-One
 
-# Music Library Management System
+## Music Library Management System
 
-## Flask Backend Initial Setup
+### Flask Backend Initial Setup
 
 1. Navigate into backend folder
 2. Once the packages have been installed, create a virtual enviornment with this command 
@@ -15,7 +15,7 @@
 7. Set FLASK_APP enviornment variable: ```set FLASK_APP=server.py```
 8. Run the command: flask run to start backend server.
 
-## Vue Frontend Initial Setup
+### Vue Frontend Initial Setup
 
 1. Navigate into the frontend folder then the ```music-management-app``` folder
 2. Run the command ```npm install```

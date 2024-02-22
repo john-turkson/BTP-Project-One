@@ -6,7 +6,7 @@
 
 1. Navigate into backend folder
 2. Once the packages have been installed, create a virtual enviornment with this command 
-	```py -3 -m venv <name of enviornment>```
+	```py -3 -m venv <name of enviornment>``` or ```python -m venv <name of environment>```
 
 3. Once this command is complete, you should see an env (or a folder nammed after whatever you have chosen for the name) folder in your backend folder.
 4. To switch into the virtual enviornment: ```<name of enviornment>\Scripts\activate```

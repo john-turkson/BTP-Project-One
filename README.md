@@ -1,3 +1,4 @@
+
 # BTP-Project-One
 
 ## Music Library Management System
@@ -21,3 +22,15 @@
 1. Navigate into the frontend folder, then the ```music-management-app``` folder
 2. Run the command ```npm install```
 3. Wait for packages to load, then run the command ```npm run dev``` 
+
+### Setting up PostgreSQL
+1. Head over to PostgreSQL's website and download their installer for your operating system. [Installer](https://www.postgresql.org/download/)
+2. Follow the installer wizard and install PostgreSQL.
+3. Add PostgreSQL's bin directory to the PATH environment variable:
+	- Find your file path (ex: C:\Program Files\PostgreSQL\16\bin).
+	- Use the win + r shortcut to bring up the Run dialog and enter ```sysdm.cpl```.
+	- Select the Advanced tab at the top and click the ```Environment Variables``` button at the bottom.
+	- In environment variables you want to use the bottom section that says ```System```.
+	- Under ```System``` you want to find the ```Path``` variable and click on the ```Edit``` button.
+	- Once ```Edit``` is clicked you can click ```New``` and add your bin path ```C:\Program Files\PostgreSQL\16\bin``` to the environment variable.
+	- Finally you can now click ```Ok``` on every box and you should be able to use PostgreSQL in CMD. 

@@ -9,7 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@braid/vue-formulate": "^2.5.3",
+    "@formkit/vue": "^1.5.9",
+    "axios": "^1.6.7",
     "vue": "^3.4.15",
     "vue-router": "^4.3.0"
   },

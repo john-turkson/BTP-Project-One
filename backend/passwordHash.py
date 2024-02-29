@@ -1,26 +1,19 @@
 import bcrypt
 
-storedPassword = b'password'
+def generateHashedPassword(password_str, rounds):
+    
+    # Generate a salt
+    salt = bcrypt.gensalt(rounds)
 
-# Salting the password
-salt = bcrypt.gensalt()
+    # Hash the password with the generated salt
+    hashed_password = bcrypt.hashpw(password_str.encode('utf-8'), salt)
 
-# Hash the password
-hashedPassword = bcrypt.hashpw(storedPassword, salt);
+    return hashed_password.decode('utf-8')
 
 
-# Print Salt
-print("Salt :")
-print(salt)
- 
-# printing the hashed
-print("Hashed")
-print(hashedPassword)
+# Verify Password
+def verifyPassword(passwordToCheck, hashed_password):
+    
+    # Check if the plain password matches the hashed password
+    return bcrypt.checkpw(passwordToCheck, hashed_password)
 
-enteredPassword = b'password'
-
-# Check if the entered password is equal to the hashed stored password
-if (hashedPassword != bcrypt.hashpw(enteredPassword, hashedPassword)):
-    print('False')
-else:
-    print('True')

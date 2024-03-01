@@ -6,4 +6,4 @@ import App from './App.vue'
 import router from './router';
 
 
-createApp(App).use(router, plugin, defaultConfig(config)).mount('#app')
+createApp(App).use(router).use(plugin, defaultConfig(config)).mount('#app')

@@ -1,10 +1,17 @@
 from flask import Flask, request, jsonify
 from passwordHash import generateHashedPassword, verifyPassword
-from database import db_insert_decorator, databaseModels
+from database import db_insert_decorator
+from flask_cors import CORS
+
 
 
 # Create's an application that is nammed after the name of the file
 server = Flask(__name__)
+
+# Enable CORS for all routes in Flask Server
+CORS(server)
+
+
 
 @server.route("/")
 def index():
@@ -15,14 +22,14 @@ def index():
 @server.route("/register-user", methods=["POST"])
 def register_user():
 
+    data = request.json 
+
     # Get form data from request
-    username = request.form.get("username")
-    email = request.form.get("email")
-    pasword = request.form.get("password")
+    username = data.get("username")
+    email = data.get("email")
+    password = generateHashedPassword(data.get("password"), 12)
 
     # return 'Username: {}, Email: {}, Password: {}'.format(username, email, pasword)
-
-    password = generateHashedPassword(request.form.get("password"), 12)
 
     # Check if all fields are valid
     if not username or not email or not password:

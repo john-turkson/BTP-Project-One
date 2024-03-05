@@ -16,4 +16,14 @@ databaseModels = {
                 """
 }
 
+# Database Commands
 
+databaseCommands = {
+    
+     # SQL command to insert user into 'Users' table
+    "insert_user_command": """
+    INSERT INTO Users (username, email, password)
+    VALUES (%s, %s, %s)
+    """
+    
+}

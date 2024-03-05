@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from passwordHash import generateHashedPassword, verifyPassword
 from database import db_insert_decorator
+from database import databaseCommands
 from flask_cors import CORS
 
 
@@ -35,17 +36,12 @@ def register_user():
     if not username or not email or not password:
         return jsonify({"message": "All Fields are required."}), 400
 
-    # SQL command to insert user into 'Users' table
-    insert_user_command = """
-    INSERT INTO Users (username, email, password)
-    VALUES (%s, %s, %s)
-    """
 
     # Insert to Database Command Decorator 
     @db_insert_decorator(error_message="An error occurred while inserting data into the database", success_message="Row inserted successfully",)
     def insert_user_to_db(usernameToBeAdded, emailToBeAdded, passwordToBeAdded):
         user_values = (usernameToBeAdded, emailToBeAdded, passwordToBeAdded)
-        return insert_user_command, user_values
+        return databaseCommands.insert_user_command, user_values
 
     # Insert into 'Users' table
     if insert_user_to_db(username, email, password):

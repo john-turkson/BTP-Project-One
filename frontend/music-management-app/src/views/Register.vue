@@ -13,10 +13,6 @@
           <FormKit type="text" name="username" id="username" placeholder="Enter your username" label="Username"
             validation="required" />
 
-          <!-- Email Field -->
-          <FormKit type="email" name="email" id="email" placeholder="Enter your email" label="Email Address"
-            validation="requried|email" />
-
           <!-- Password Field -->
           <FormKit type="password" name="password" id="password" placeholder="Enter a password" label="Password"
             validation="required" />
@@ -44,7 +40,6 @@ export default {
     return {
       username: '',
       password: '',
-      email: '',
     };
   },
 
@@ -53,13 +48,11 @@ export default {
 
       this.username = values.username;
       this.password = values.password;
-      this.email = values.email;
 
       try {
         const response = await axios.post('http://localhost:5000/register-user', {
           username: this.username,
           password: this.password,
-          email: this.email
         });
 
         console.log(response.data);

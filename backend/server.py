@@ -12,8 +12,7 @@ server = Flask(__name__)
 # Enable CORS for all routes in Flask Server
 CORS(server)
 
-
-
+# Home Route 
 @server.route("/")
 def index():
     return "Hello world!"

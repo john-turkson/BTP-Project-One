@@ -297,5 +297,36 @@ def get_music_by_playlist(playlist_id):
 
     return jsonify({"music":music_list}), 200
 
+@app.route('/playlist/<int:playlist_id>', methods=['DELETE'])
+def remove_playlist(playlist_id):
+    # Attempt to retrieve the playlist from the database
+    playlist = Playlist.query.get(playlist_id)
+
+    # Check if the playlist exists
+    if playlist:
+        # Delete the playlist from the database
+        db.session.delete(playlist)
+        db.session.commit()
+        return jsonify({'message': 'Playlist deleted successfully'}), 200
+    else:
+        # Return an error message if the playlist does not exist
+        return jsonify({'error': 'Playlist not found'}), 404
+
+@app.route('/music/<int:music_id>', methods=['DELETE'])
+def remove_music(music_id):
+    # Attempt to retrieve the music track from the database
+    music = Music.query.get(music_id)
+
+    # Check if the music track exists
+    if music:
+        # Delete the music track from the database
+        db.session.delete(music)
+        db.session.commit()
+        return jsonify({'message': 'Music track deleted successfully'}), 200
+    else:
+        # Return an error message if the music track does not exist
+        return jsonify({'error': 'Music track not found'}), 404
+
+
 if __name__ == "__main__":
     Flask.run(app)

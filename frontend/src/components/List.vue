@@ -24,10 +24,16 @@
             <img src="@/assets/images/add-list.png" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"/>
             <div class="dropdown">
               <ul class="dropdown-menu">
-                <li v-for="(playlist,index) in playlists" :key="index" class="dropdown-item" @click="addMusicToPlaylist(item.id,playlist.id)">{{ playlist.name }}</li>
+                <li v-for="(playlist,index) in playlists" :key="index" class="dropdown-item" @click="addMusicToPlaylist(item.id,playlist.id)">
+                  {{ playlist.name }}
+                </li>
               </ul>
             </div>
           </div>
+          <div class="list__item-delete-music">
+            <img src="@/assets/images/trash.png" @click="deleteMusic(item.id)"/>
+          </div>
+
         </div>
       </div>
     </div>
@@ -45,7 +51,16 @@
     function getBase64Audio(base64String) {
         return `data:audio/mp3;base64,${base64String}`;
     }
-
+    const deleteMusic =  async (id) =>{
+        console.log("delete:",id);
+        axios.delete(`http://localhost:5000/music/${id}`)
+        .then((response)=>{
+            window.location.href = "/";
+        })
+        .catch (error=> {
+            console.error('Error deleting music:', error);
+        });
+    }
     function addMusicToPlaylist(music_id,playlist_id){
       console.log(`Add Music ${music_id} to the Playlist: ${playlist_id}`);
       try {

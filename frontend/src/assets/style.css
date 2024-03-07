@@ -96,6 +96,10 @@ body{
 .sub__list{
     padding-left: 30px;
 }
+.library__list-item-content img,
+.list__item-delete-music img{
+    width: 20px;
+}
 .library__header,
 .list__header{
     padding: 16px 8px;

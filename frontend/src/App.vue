@@ -11,7 +11,7 @@
                 <List :playlists="playlists.data" :listData="data.music" :title="title" @fetchUploads="fetchUploads" @fetchFavorits="fetchFavorits" @setCurrentMusic="setCurrentMusic" @shuffle="shuffle"/>
             </div>
         </div>
-        <h2 class="m-5" v-else>You Should Login!!</h2>
+        <!-- <h2 class="center_item" v-else>Try Making an Account!</h2> -->
     </div>
 
     <Player :queue="data.music" :current="currentMusic" />

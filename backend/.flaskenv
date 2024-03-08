@@ -1,0 +1,2 @@
+FLASK_SERVER=app.py
+FLASK_DEBUG=True

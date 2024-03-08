@@ -2,7 +2,7 @@
     <div class="header">
         <div class="container">
             <div class="header__container">
-                <div class="header__logo">MP3 Platform</div>
+                <div class="header__logo">Music Loader</div>
                 <!-- <div class="header__links">
                     <ul>
                         <li>Home</li>

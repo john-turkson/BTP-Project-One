@@ -1,5 +1,5 @@
 <template>
     <div class="hero">
-        <h1>Load <div class="music-symbol">♫</div> Music</h1>
+        <h1>Music <div class="music-symbol">♫</div> Loader</h1>
     </div>
 </template>

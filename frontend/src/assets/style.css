@@ -331,6 +331,14 @@ body{
     height: 8px;
     width: 600px;
 } 
+
+.center_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
 audio{
     width: 600px;
     height: 24px;

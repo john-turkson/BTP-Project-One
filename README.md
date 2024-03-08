@@ -13,7 +13,7 @@
 4. To switch into the virtual environment: ```<name of enviornment>\Scripts\activate```
 5. Once in the virtual environment, your terminal should look like this: ```(env) C:\Users\jturk\Documents\Seneca\BSD\BTP405\Project One\BTP-Project-One\backend>```
 6. Run this command when inside the virtual environment and in the backend folder:  ```pip install -r requirements.txt```
-7. Set FLASK_APP environment variable: ```set FLASK_APP=server.py``` or ```$env:FLASK_APP = "server.py"``` (depending on if you're using Command Prompt or PowerShell)
+7. Set FLASK_APP environment variable: ```set FLASK_APP=app.py``` or ```$env:FLASK_APP = "app.py"``` (depending on if you're using Command Prompt or PowerShell)
 8. Run the command: flask run to start the backend server.
 9. Lastly, if you want to exit the environment, you can use ```deactivate```
 
